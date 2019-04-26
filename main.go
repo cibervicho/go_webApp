@@ -8,6 +8,11 @@ import (
 
 var tpl *template.Template
 
+type person struct {
+	FirstName string
+	Age int
+}
+
 func init() {
 	tpl = template.Must(template.ParseGlob("templates/*.gohtml"))
 }
@@ -19,6 +24,12 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	tpl.ExecuteTemplate(w, "index.gohtml", nil)
+	p1 := person {
+		"David",
+		37,
+	}
+	
+	//tpl.ExecuteTemplate(w, "index.gohtml", nil)
+	tpl.ExecuteTemplate(w, "index.gohtml", p1)
 	
 }
