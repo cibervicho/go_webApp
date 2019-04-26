@@ -1,8 +1,9 @@
 package main
 
 import (
-	"net/http"
 	"html/template"
+	"log"
+	"net/http"
 )
 
 var tpl *template.Template
@@ -14,9 +15,10 @@ func init() {
 func main() {
 	http.HandleFunc("/", index)
 	
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
 	tpl.ExecuteTemplate(w, "index.gohtml", nil)
+	
 }
