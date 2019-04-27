@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>All Movies</title>
+    <meta charset="UTF-8">
+    <title>One Movie</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<style>
-		h1 {
+    <style>
+        h1 {
 			color:red;
 			font-size:40px;
 		}
@@ -24,12 +24,11 @@
 		table {
 			margin-left: 4rem;
 		}
-	</style>
+    </style>
 </head>
 <body>
 	<h1><a href="/">DevOps Movies DB</a></h1>
 	<br>
-
 	<style type="text/css">
 	.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
 	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
@@ -49,27 +48,31 @@
 		<td class="tg-header">ID</td>
 		<td class="tg-header">Movie Name</td>
 		<td class="tg-header">Year</td>
-		<td class="tg-header">Edit</td>
-		<td class="tg-header">Delete</td>
+		<td class="tg-header">Rating</td>
+		<td class="tg-header">Genre</td>
 	  </tr>
-	  {{range .}}
 	  <tr>
-		<td class="tg-0lax"> <a href="/movies/show?my_id={{.My_id}}">{{.My_id}}</a> </td>
-		<td class="tg-0lax"> {{.Title}} </td>
-		<td class="tg-lqy6"> {{.Year}} </td>
-		<td class="tg-baqh"> <a href="/movies/update?my_id={{.My_id}}"><i class='fas fa-feather-alt' style='color:green'></i></a> </td>
-		<td class="tg-baqh"> <a href="/movies/delete/process?my_id={{.My_id}}"><i class="fa fa-trash" style='color:red'></i></a> </td>
+		<td class="tg-0lax">{{.My_id}}</td>
+		<td class="tg-0lax">{{.Title}}</td>
+		<td class="tg-lqy6">{{.Year}}</td>
+		<td class="tg-baqh">{{.Rated}}</td>
+		<td class="tg-baqh">{{.Genre}}</td>
 	  </tr>
-	  {{end}}
-
 	</table>
-	<p>
-		<a href="/movies/create">
-			<button>New Movie
-				<i class="material-icons">fiber_new</i>
-			</button>
+	<br>
+	<table class="tg">
+	  <tr>
+		<th class="tg-baqh" colspan="6">Description</th>
+	  </tr>
+	  <tr>
+		<td style="width: 450px">{{.Plot}}</td>
+	  </tr>
+	</table>
+	<p class="link">
+		<a href="/movies">
+			<button style="font-size:24px">Return <i class="material-icons">keyboard_return</i></button>
 		</a>
 	</p>
-	
+
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Movie</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        h1 {
+			color:red;
+			font-size:40px;
+		}
+		h3 {
+			margin-left: 4rem;
+		}
+		p {
+            margin-left: 4rem;
+            font-size: 15px;
+            color: black;
+        }
+		.link {
+            font-size: 1rem;
+        }
+		table {
+			margin-left: 4rem;
+		}
+    </style>
+</head>
+<body>
+	<h1><a href="/">DevOps Movies DB</a></h1>
+	<br>
+	
+	<h3>Update A Movie</h3>
+	<form method="post" action="/movies/update/process">
+		<p>
+		<input type="hidden" name="my_id" id="my_id" value="{{.My_id}}">
+		<input type="text" name="title" placeholder="* Movie Title" required autofocus value="{{.Title}}"><br>
+		<input type="text" name="year" placeholder="* Year" required value="{{.Year}}"><br>
+		<input type="text" name="rated" placeholder="Rating" required value="{{.Rated}}"><br>
+		<input type="text" name="genre" placeholder="Genre" required value="{{.Genre}}"><br>
+		<input type="text" name="plot" placeholder="Description" required value="{{.Plot}}"><br><br>
+		<input type="submit">
+		</p>
+	</form>
+	<br><br>
+	<p class="link">
+		<a href="/movies">
+			<button style="font-size:24px">Return <i class="material-icons">keyboard_return</i></button>
+		</a>
+	</p>
+
+</body>
+</html>
