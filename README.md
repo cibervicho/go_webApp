@@ -2,7 +2,7 @@
 This is a Go web application which gets connected to MongoDB (noSQL database).
 The go_webApp runs as a service listening in por 8008.
 
-## Instrucions to get the app running
+## Instrucions to install Go and Mongo
 First things first... 
 1. Install Golang
    - Follow the instructions in the [Golang's web page](https://golang.org/doc/install) to reach this.
@@ -15,4 +15,11 @@ First things first...
      Usualy, when downloading the main `cibervicho/go_webApp` repository, Go downloads automatically its dependencies, such as `globalsign/mgo`.
 2. Install MongoDB CE (MongoDB Community Edition)
    - Follow the instructions in the [MongoDB's installation tutorial](https://docs.mongodb.com/manual/installation/#tutorial-installation).
-   - <WIP>
+   - I personaly followed the installation instructions from the book [The Little MongoDB Book](https://www.openmymind.net/2011/3/28/The-Little-MongoDB-Book/).
+
+## Testing Go
+
+## Configuring and Testing Mongo
+
+## Installing Jenkins and the required plugins
+### Explaining the bash scripts in Jenkins
