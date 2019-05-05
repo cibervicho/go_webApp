@@ -12,6 +12,7 @@ First things first...
    >go get github.com/cibervicho/go_webApp
    >go get github.com/globalsign/mgo
    >```
+     Usualy, when downloading the main `cibervicho/go_webApp` repository, Go downloads automatically its dependencies, such as `globalsign/mgo`.
 2. Install MongoDB CE (MongoDB Community Edition)
    - Follow the instructions in the [MongoDB's installation tutorial](https://docs.mongodb.com/manual/installation/#tutorial-installation).
    - <WIP>
