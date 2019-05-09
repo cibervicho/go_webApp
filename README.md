@@ -19,10 +19,10 @@ First things first...
 
 ## Testing Go
 To verify that you installed Golang correctly just type the following. You should see the same version of the programing language you installed:
-   ```
-   ~$ go version
-   go version go1.12.4 linux/amd64
-   ```
+      >```
+      >~$ go version
+      >go version go1.12.4 linux/amd64
+      >```
    
 ## Configuring and Testing Mongo
 
