@@ -43,6 +43,9 @@ Save the file and try to run it as follows:
 If you see the `Hello Universe!` message printed in the screen, you just double checked that your Go installation is actually compiling and running Go programs correctly. Congratulations!
    
 ## Configuring and Testing Mongo
+To work with MongoDB two entities are required:
+1. The Server side
+2. The Client side
 
 ## Installing Jenkins and the required plugins
 ### Explaining the bash scripts in Jenkins
