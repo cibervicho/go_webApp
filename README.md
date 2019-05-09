@@ -18,7 +18,12 @@ First things first...
    - I personaly followed the installation instructions from the book [The Little MongoDB Book](https://www.openmymind.net/2011/3/28/The-Little-MongoDB-Book/).
 
 ## Testing Go
-
+To verify that you installed Golang correctly just type the following. You should see the same version of the programing language you installed:
+   ```
+   ~$ go version
+   go version go1.12.4 linux/amd64
+   ```
+   
 ## Configuring and Testing Mongo
 
 ## Installing Jenkins and the required plugins
