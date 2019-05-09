@@ -21,7 +21,7 @@ First things first...
 To verify that you installed Golang correctly just type the following. You should see the same version of the programing language you installed:
    >```
    >~$ go version
-   >**_go version go1.12.4 linux/amd64_**
+   >go version go1.12.4 linux/amd64
    >```
 If you received a message somwhat like the above then you are good to Go! :)
 
@@ -38,9 +38,9 @@ Now, go ahead and create a `hello.go` file with the following content in it:
 Save the file and try to run it as follows:
 >```
 >$ go run hello.go 
->**_Hello Universe!_**
+>Hello Universe!
 >```
-If you see the `**_Hello Universe!_**` message printed in the screen, you just double checked that your Go installation is actually compiling and running Go programs correctly. Congratulations!
+If you see the `Hello Universe!` message printed in the screen, you just double checked that your Go installation is actually compiling and running Go programs correctly. Congratulations!
    
 ## Configuring and Testing Mongo
 
