@@ -46,6 +46,8 @@ If you see the `Hello Universe!` message printed in the screen, you just double 
 To work with MongoDB two entities are required:
 1. The Server side
 2. The Client side
+### MongoDB as a server
+
 
 ## Installing Jenkins and the required plugins
 ### Explaining the bash scripts in Jenkins
