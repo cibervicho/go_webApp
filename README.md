@@ -15,7 +15,7 @@ First things first...
      Usualy, when downloading the main `cibervicho/go_webApp` repository, Go downloads automatically its dependencies, such as `globalsign/mgo`.
 2. Install MongoDB CE (MongoDB Community Edition)
    - Follow the instructions in the [MongoDB's installation tutorial](https://docs.mongodb.com/manual/installation/#tutorial-installation).
-   - I personaly followed the installation instructions from the book [The Little MongoDB Book](https://www.openmymind.net/2011/3/28/The-Little-MongoDB-Book/).
+   - The manual installation instructions from the book [The Little MongoDB Book](https://www.openmymind.net/2011/3/28/The-Little-MongoDB-Book/) are also a good resource.
 
 ## Testing Go
 To verify that you installed Golang correctly just type the following. You should see the same version of the programing language you installed:
@@ -43,11 +43,13 @@ Save the file and try to run it as follows:
 If you see the `Hello Universe!` message printed in the screen, you just double checked that your Go installation is actually compiling and running Go programs correctly. Congratulations!
    
 ## Configuring and Testing Mongo
+If you installed via the package manager (following the mongoDB installation instructions), the data directory `/var/lib/mongodb` and the log directory `/var/log/mongodb` are created during the installation.
 To work with MongoDB two entities are required:
-1. The Server side
-2. The Client side
-### MongoDB as a server
-
+1. The Server and
+2. The Client
+### MongoDB: The Server
+The official MongoDB package includes a configuration file `/etc/mongod.conf`. These settings (such as the data directory and log directory specifications) take effect upon startup. That is, if you change the configuration file while the MongoDB instance is running, you must restart the instance for the changes to take effect.
+Go ahead and update this `mongod.conf` file and be sure to `dbPath` under `storage:` and the `path` under the `systemLog:` sections are pointing to the correct data and log directories previously mentioned [here]().
 
 ## Installing Jenkins and the required plugins
 ### Explaining the bash scripts in Jenkins
