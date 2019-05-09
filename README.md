@@ -19,10 +19,34 @@ First things first...
 
 ## Testing Go
 To verify that you installed Golang correctly just type the following. You should see the same version of the programing language you installed:
+
    >```
    >~$ go version
    >go version go1.12.4 linux/amd64
    >```
+
+If you received a message somwhat like the above then you are good to Go! :)
+
+Now, go ahead and create a `hello.go` file with the following content in it:
+
+>```
+>package main
+>
+>import "fmt"
+>
+>func main() {
+>  fmt.Println("Hello Universe!")
+>}
+>```
+
+Save the file and try to run it as follows:
+
+>```
+>$ go run hello.go 
+>Hello Universe!
+>```
+
+If you see the `Hello Universe!` message printed in the screen, you just double checked that your Go installation is actually compiling and running Go programs correctly. Congratulations!
    
 ## Configuring and Testing Mongo
 
