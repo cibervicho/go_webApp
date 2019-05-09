@@ -49,7 +49,59 @@ To work with MongoDB two entities are required:
 2. The Client
 ### MongoDB: The Server
 The official MongoDB package includes a configuration file `/etc/mongod.conf`. These settings (such as the data directory and log directory specifications) take effect upon startup. That is, if you change the configuration file while the MongoDB instance is running, you must restart the instance for the changes to take effect.
-Go ahead and update this `mongod.conf` file and be sure to `dbPath` under `storage:` and the `path` under the `systemLog:` sections are pointing to the correct data and log directories previously mentioned [here]().
+
+Go ahead and update this `mongod.conf` file and be sure to `dbPath` under `storage:` and the `path` under the `systemLog:` sections are pointing to the correct data and log directories previously mentioned [here](https://github.com/cibervicho/go_webApp/blob/master/README.md#mongodb-the-server).
+
+Another change to be made in this configuration file is under the `net:` section, the `bindIp` parameter should be `0.0.0.0` instead as `127.0.0.1`. This to allow the database to be accesible from different clients, not only from localhost.
+
+The following is an example of the `mongod.conf` file:
+   >```
+   ># mongod.conf
+   >
+   ># for documentation of all options, see:
+   >#   http://docs.mongodb.org/manual/reference/configuration-options/
+   >
+   ># Where and how to store data.
+   >storage:
+   >  dbPath: /var/lib/mongodb
+   >  journal:
+   >    enabled: true
+   >#  engine:
+   >#  mmapv1:
+   >#  wiredTiger:
+   >
+   ># where to write logging data.
+   >systemLog:
+   >  destination: file
+   >  logAppend: true
+   >  path: /var/log/mongodb/mongod.log
+   >
+   ># network interfaces
+   >net:
+   >  port: 27017
+   >  bindIp: 0.0.0.0 # Default was 127.0.0.1
+   >
+   >
+   ># how the process runs
+   >processManagement:
+   >  timeZoneInfo: /usr/share/zoneinfo
+   >
+   >#security:
+   >
+   >#operationProfiling:
+   >
+   >#replication:
+   >
+   >#sharding:
+   >
+   >## Enterprise-Only Options:
+   >
+   >#auditLog:
+   >
+   >#snmp:
+   >```
+
+### MongoDB: The Client
 
 ## Installing Jenkins and the required plugins
 ### Explaining the bash scripts in Jenkins
