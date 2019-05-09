@@ -50,9 +50,9 @@ To work with MongoDB two entities are required:
 ### MongoDB: The Server
 The official MongoDB package includes a configuration file `/etc/mongod.conf`. These settings (such as the data directory and log directory specifications) take effect upon startup. That is, if you change the configuration file while the MongoDB instance is running, you must restart the instance for the changes to take effect.
 
-Go ahead and update this `mongod.conf` file and be sure to `dbPath` under `storage:` and the `path` under the `systemLog:` sections are pointing to the correct data and log directories previously mentioned [here](https://github.com/cibervicho/go_webApp/blob/master/README.md#mongodb-the-server).
+Go ahead and update this `mongod.conf` file and be sure the `dbPath` under `storage:` and the `path` under the `systemLog:` sections are pointing to the correct data and log directories previously mentioned [here](https://github.com/cibervicho/go_webApp/blob/master/README.md#mongodb-the-server).
 
-Another change to be made in this configuration file is under the `net:` section, the `bindIp` parameter should be `0.0.0.0` instead as `127.0.0.1`. This to allow the database to be accesible from different clients, not only from localhost.
+Another change to be made in this configuration file is under the `net:` section. The `bindIp` parameter should be `0.0.0.0` instead as `127.0.0.1`. This to allow the database to be accesible from different clients, not only from localhost.
 
 The following is an example of the `mongod.conf` file:
    >```
@@ -100,6 +100,8 @@ The following is an example of the `mongod.conf` file:
    >
    >#snmp:
    >```
+
+https://hevodata.com/blog/install-mongodb-on-ubuntu/
 
 ### MongoDB: The Client
 
