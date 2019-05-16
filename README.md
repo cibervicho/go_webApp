@@ -366,4 +366,88 @@ To verify the collection `imdb` has data just execute the following command:
 If you get `18` as the number of entries in the collection `imdb` after typing the command `db.imdb.find().count()`, and then you see the data displayed with the command `db.imdb.find()` you are good to **Go**
 
 ## Installing Jenkins and the required plugins
+Jenkins is an open source automation server that offers an easy way to set up a continuous integration and continuous delivery (CI/CD) pipeline.
+
+Continuous integration (CI) is a DevOps practice in which team members regularly commit their code changes to the version control repository, after which automated builds and tests are run. Continuous delivery (CD) is a series of practices where code changes are automatically built, tested and deployed to production.
+
+We will install Jenkins on a Lubuntu machine (acting as a server) using the Jenkins Debian package repository.
+
+For the sake of these instructions make sure you are logged in as a user with sudo privileges.
+
+### Installing Jenkins
+1. Install Java
+    ```sh
+    ~$ sudo apt update
+    ~$ sudo apt install openjdk-8-jdk
+    ```
+    The current version of Jenkins does not support Java 10 (and Java 11) yet. If you have multiple versions of Java installed on your machine make sure Java 8 is the default Java version.
+2. Add the Jenkins Debian repository.
+    Import the GPG keys of the Jenkins repository using the following `wget` command:
+    ```sh
+    ~$ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+    ```
+    The command above should output `OK` which means that the key has been successfully imported and packages from this repository will be considered trusted.
+
+    Next, add the Jenkins repository to the system with:
+    ```sh
+    ~$ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    ```
+3. Install Jenkins
+    Once the Jenkins repository is enabled, update the `apt` package list and install the latest version of Jenkins by typing:
+    ```sh
+    ~$ sudo apt update
+    ~$ sudo apt install jenkins
+    ```
+    Jenkins service will automatically start after the installation process is complete. You can verify it by printing the service status:
+    ```sh
+    ~$ systemctl status jenkins
+    ● jenkins.service - LSB: Start Jenkins at boot time
+    Loaded: loaded (/etc/init.d/jenkins; generated)
+    Active: active (exited) since Wed 2019-05-15 21:39:57 CDT; 50min ago
+        Docs: man:systemd-sysv-generator(8)
+    Process: 882 ExecStart=/etc/init.d/jenkins start (code=exited, status=0/SUCCESS)
+    
+    May 15 21:39:43 dmaldonaserver systemd[1]: Starting LSB: Start Jenkins at boot time...
+    May 15 21:39:53 dmaldonaserver jenkins[882]: Correct java version found
+    May 15 21:39:53 dmaldonaserver jenkins[882]:  * Starting Jenkins Automation Server jenkins
+    May 15 21:39:54 dmaldonaserver su[1036]: (to jenkins) root on none
+    May 15 21:39:54 dmaldonaserver su[1036]: pam_unix(su-l:session): session opened for user jenkins by (uid=0)
+    May 15 21:39:57 dmaldonaserver jenkins[882]:    ...done.
+    May 15 21:39:57 dmaldonaserver systemd[1]: Started LSB: Start Jenkins at boot time.
+    ```
+### Setting Up Jenkins
+To set up your new Jenkins installation, open your browser, type your domain or IP address followed by port `8080`, `http://your_ip_or_domain:8080` and a screen similar to the following will be displayed:
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+During the installation, the Jenkins installer creates an initial 32-character long alphanumeric password. Use the following command to print the password on your terminal:
+```sh
+~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+Copy the password from your terminal, paste it into the Administrator password field and click `Continue`.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+On the next screen, the setup wizard will ask you whether you want to install suggested plugins or you want to select specific plugins. Click on the `Install suggested plugins` box, and the installation process will start immediately.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+Once the plugins are installed, you will be prompted to set up the first admin user. Fill out all required information and click `Save and Continue`.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+The next page will ask you to set the URL for your Jenkins instance. The field will be populated with an automatically generated URL.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+Confirm the URL by clicking on the `Save and Finish` button and the setup process will be completed.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+Click on the `Start using Jenkins` button and you will be redirected to the Jenkins dashboard logged in as the admin user you have created in one of the previous steps.
+
+***[<IMG placeholder>](https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/)***
+
+At this point, you’ve successfully installed Jenkins on your system.
+
 ### Explaining the bash scripts in Jenkins
